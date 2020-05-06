@@ -1,0 +1,4 @@
+#baseurl=https://www.morningstar.com/
+#spring.active.profile=qa
+#browser=chrome
+

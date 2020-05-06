@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjs.automation.springBootSelenium.Mapper.cmsSubjectCategoryMapper">
+    <insert id="insertCategory" parameterType="com.hjs.automation.springBootSelenium.model.cmsSubjectCategoryModel">
+        <![CDATA[
+    INSERT INTO cms_subject_category (name,icon,subject_count,show_status,sort) VALUES (#{name},#{icon},#{subject_count},#{show_status},#{sort})
+     ]]>
+    </insert>
+
+    <update id="updateCategory" parameterType="com.hjs.automation.springBootSelenium.model.cmsSubjectCategoryModel">
+        <![CDATA[
+    UPDATE cms_subject_category SET name = #{name},icon = #{icon},subject_count = #{subject_count},show_status = #{show_status},sort = #{sort} WHERE id = #{id}
+    ]]>
+    </update>
+
+    <update id="deleteCategory" parameterType="java.lang.Integer">
+        <![CDATA[
+    DELETE FROM cms_subject_category WHERE id = #{id}
+    ]]>
+    </update>
+
+    <select id="getCategoryList" resultType="com.hjs.automation.springBootSelenium.model.cmsSubjectCategoryModel">
+<!--        <![CDATA[-->
+    SELECT * FROM cms_subject_category
+<!--    ]]>-->
+    </select>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "web-bi-regression-test" parallel="methods" thread-count="1">
+
+    <test name = "bi-ui-test">
+        <groups>
+            <run>
+                <include name="smokeTest" />
+            </run>
+        </groups>
+        <classes>
+<!--            <class name = "com.hjs.automation.springBootSelenium.test.ui.TestBILogin" />-->
+            <class name = "com.hjs.automation.springBootSelenium.test.ui.TestReportSchedule" />
+        </classes>
+    </test>
+    <test name = "bi-api-test">
+        <classes>
+            <class name = "com.hjs.automation.springBootSelenium.test.api.TestMyBatis" />
+        </classes>
+    </test>
+    <!--以下listeners为了生成新的report-->
+    <listeners>
+        <listener class-name="com.hjs.automation.springBootSelenium.listeners.ExtentTestNGIReporterListener"/>
+<!--        已经在AbstractTest类上注解了，无须这里再加，否者将会截图两边-->
+<!--        <listener class-name="com.hjs.automation.springBootSelenium.listeners.ScreenshotListener" />-->
+    </listeners>
+</suite>

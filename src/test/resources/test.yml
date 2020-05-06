@@ -1,0 +1,10 @@
+aws:
+  config:
+    region: "ap-southeast-16"
+    accessKeyId: NBA7
+    secretAccessKey: ICCL/cbd0KB
+    queueName: reb
+    s3QueueName: reb_s3
+    imageQueueName: reb_dev
+    concurrent: 3
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d [%t] %X{ThreadID} %-5p %c - %m%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- 使用时间戳作为文件名 -->
+    <timestamp key="bySecond" datePattern="yyyyMMdd_HHmmss"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>test-output/logs/springbootSelenium_${bySecond}.log</file>
+        <append>true</append>
+        <!-- set immediateFlush to false for much higher logging throughput -->
+<!--        <immediateFlush>true</immediateFlush>-->
+        <encoder>
+            <pattern>%d [%t] %X{ThreadID} %-5p %c - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>

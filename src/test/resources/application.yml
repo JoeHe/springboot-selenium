@@ -1,0 +1,9 @@
+#baseurl=https://www.morningstar.com/
+#spring.active.profile=qa
+#browser=chrome
+
+weather:
+  dt: "2018-06-09"
+  humidity: "Tom"
+  city: "SH"
+  wd: 10
